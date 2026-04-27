@@ -1,48 +1,159 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8b4479cd476c586617e3da446e532749a551b75f
-=======
->>>>>>> 8b4479cd476c586617e3da446e532749a551b75f
-# React + Vite
+# 🛒 Full Stack E-Commerce Application (MERN)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-grade **E-Commerce Web Application** built using the **MERN stack**, inspired by platforms like Flipkart and Amazon.
 
-Currently, two official plugins are available:
+This project demonstrates **end-to-end full stack development**, including authentication, product management, cart system, and order flow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live Demo
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Flipkart
-Flipkart Clone Project Using React.js
->>>>>>> a0a0a90cf10592bab4a84c2f1ad327a6d3172937
-=======
-# Flipkart
-Flipkart clone using Reactjs
->>>>>>> 3ac68a5a035819f91d8c3a60be9f868cf03fdc06
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-# Flipkart
-Flipkart clone using Reactjs
->>>>>>> 3ac68a5a035819f91d8c3a60be9f868cf03fdc06
-=======
->>>>>>> 8b4479cd476c586617e3da446e532749a551b75f
-=======
->>>>>>> 8b4479cd476c586617e3da446e532749a551b75f
-=======
-# Flipkart
-Flipkart clone using Reactjs
->>>>>>> dd62bd341e20109be42b9f3fac62c6fe9859e17a
-=======
-# Flipkart-fe
->>>>>>> 0c14c5c87be3062f6701f344f81bb26bb7c2b8ee
+- 🌐 Website Link: https://ecom-two-virid.vercel.app/  
+
+
+---
+
+## 📂 Repositories
+
+- 🖥️ Frontend Repo: https://github.com/vaibhavkumar18/Ecom.git  
+- 🌐 Backend Repo: https://github.com/vaibhavkumar18/Ecom-backend.git  
+
+---
+
+## 📌 Overview
+
+This application allows users to:
+- Add/remove items from cart
+- Manage user accounts
+- Add/edit/delete addresses
+- Place orders
+- Persist data using backend APIs
+
+Built with focus on **scalable architecture and real-world backend practices**.
+
+---
+
+## ⚙️ Tech Stack
+
+### 🖥️ Frontend
+- React.js (Hooks)
+- Redux (State Management)
+- Tailwind CSS
+- React Router
+
+### 🌐 Backend
+- Node.js
+- Express.js
+
+### 🗄️ Database
+- MongoDB (NoSQL)
+- Mongoose (ODM)
+
+### 🔐 Authentication
+- JWT (JSON Web Tokens)
+
+---
+
+## 🧠 Features
+
+### 👤 Authentication
+- User Signup & Login
+- JWT-based secure authentication
+- Protected routes
+
+### 🛍️ Product System
+- Dynamic product listing
+- Product detail pages
+- Backend-driven data fetching
+
+### 🛒 Cart System
+- Add/remove items
+- Update quantity
+- Persistent cart (stored in DB)
+
+### 📦 Order Flow
+- Checkout process
+- Order placement logic
+
+### 📍 Address Management
+- Add / Edit / Delete address
+- Redux-based state handling
+
+---
+
+## 🏗️ Architecture
+Frontend (React + Redux)
+↓ API Calls
+Backend (Node.js + Express)
+↓
+MongoDB Database
+
+
+---
+
+## 📁 Project Structure
+
+### Frontend
+src/
+├── components/
+├── pages/
+├── redux/
+└── App.jsx
+
+---
+
+
+## 🚀 Getting Started (Local Setup)
+### 1. Create a Folder Named "Frontend"
+####  Clone Repositories
+##### Frontend
+```bash
+cd Frontend
+git clone https://github.com/vaibhavkumar18/Ecom.git
+```
+### Create a Folder Named "Backend"
+##### Backend
+```bash
+cd Backend
+git clone https://github.com/vaibhavkumar18/Ecom-backend.git
+```
+
+### 2. Install Dependencies
+#### Frontend
+```bash
+npm install
+```
+
+#### Backend
+```bash
+npm install
+```
+
+### 3. Environment Variables (Backend)
+#### Create .env file:
+```bash
+PORT=3000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+```
+
+### 4. Run Application
+#### Frontend
+```bash
+npm run dev
+```
+
+#### Backend
+```bash
+npm run dev
+```
+
+## 📬 Contact
+
+- 👤 Name: Vaibhav   
+- 💼 LinkedIn: https://www.linkedin.com/in/vaibhavcodes/  
+- 💻 GitHub: https://github.com/vaibhavkumar18  
+
+---
+
+⭐ Found this project helpful or interesting? A star would mean a lot.
