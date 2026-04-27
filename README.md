@@ -8,7 +8,7 @@ This project demonstrates **end-to-end full stack development**, including authe
 
 ## 🔗 Live Demo
 
-- 🌐 App Link: https://ecom-two-virid.vercel.app/  
+- 🌐 Website Link: https://ecom-two-virid.vercel.app/  
 
 
 ---
@@ -147,3 +147,13 @@ npm run dev
 ```bash
 npm run dev
 ```
+
+## 📬 Contact
+
+- 👤 Name: Vaibhav   
+- 💼 LinkedIn: https://www.linkedin.com/in/vaibhavcodes/  
+- 💻 GitHub: https://github.com/vaibhavkumar18  
+
+---
+
+⭐ If you found this project useful or interesting, consider giving it a star!
