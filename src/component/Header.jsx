@@ -184,19 +184,19 @@ const Header = () => {
                                                     </div>
                                                 </ul>
 
-                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-300"></div>
+                                                <div className="lg:w-[10rem] w-[5rem] h-[1px] bg-gray-300"></div>
                                                 <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => navigate("/MyProfile")}>
                                                     <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => navigate("/MyProfile")}>
                                                         <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw] '>My Profile</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
+                                                <div className="lg:w-[10rem] w-[5rem] h-[1px] bg-gray-500"></div>
                                                 <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => navigate("/Order")}>
                                                     <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => navigate("/Order")}>
                                                         <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw]  '>Orders</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
+                                                <div className="lg:w-[10rem] w-[5rem] h-[1px] bg-gray-500"></div>
                                                 <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => {
                                                     setHamOpen(false);
                                                     setIsOpen(false);
@@ -214,7 +214,7 @@ const Header = () => {
                                                         }}>Logout</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
+                                                <div className="lg:w-[10rem] w-[5rem] h-[1px] bg-gray-500"></div>
 
                                             </div>
                                         </>)}
