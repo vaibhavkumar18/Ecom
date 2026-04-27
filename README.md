@@ -16,7 +16,7 @@ This project demonstrates **end-to-end full stack development**, including authe
 ## 📂 Repositories
 
 - 🖥️ Frontend Repo: https://github.com/vaibhavkumar18/Ecom.git  
-- 🌐 Backend Repo: https://github.com/vaibhavkumar18/Flipkart-be.git  
+- 🌐 Backend Repo: https://github.com/vaibhavkumar18/Ecom-backend.git  
 
 ---
 
@@ -115,7 +115,7 @@ git clone https://github.com/vaibhavkumar18/Ecom.git
 ##### Backend
 ```bash
 cd Backend
-git clone https://github.com/vaibhavkumar18/Flipkart-be.git
+git clone https://github.com/vaibhavkumar18/Ecom-backend.git
 ```
 
 ### 2. Install Dependencies
