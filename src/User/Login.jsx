@@ -116,9 +116,7 @@ const Login = () => {
                             <h1 className='lg:text-3xl md:text-3xl text-xl font-semibold'>Welcome Back</h1>
                             <p className='lg:text-sm md:text-sm text-[15px]'>Access you Orders and Wishlist</p>
                         </div>
-                        {errorMessage && (
-                            <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
-                        )}
+
                         <form onSubmit={handleLogin}>
                             <div className="container flex justify-center items-center flex-col lg:ml-[30px] ml-[20px] mt-[15px] gap-[25px] ">
 
@@ -135,10 +133,11 @@ const Login = () => {
                                         className="absolute left-0 text-gray-500 lg:text-base text-sm transition-all duration-300 ease-in-out peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500 whitespace-nowrap cursor-pointer font-bold">
                                         Enter Email
                                     </label>
+                                    
                                 </div>
 
 
-                                <div className="relative flex flex-row items-center j w-full ">
+                                <div className="relative flex flex-row items-center  w-full ">
                                     <input
                                         required
                                         type={showPassword ? "text" : "password"}
@@ -164,6 +163,9 @@ const Login = () => {
 
 
                                 </div>
+                                {errorMessage && (
+                                    <p className="text-red-500 text-sm mt-0 text-left w-[100%]">{errorMessage}</p>
+                                )}
                             </div>
                             <div className="login-btn flex justify-center items-center mt-[40px]">
                                 <button className='rounded-full w-[28vw] lg:text-xl md:text-lg  text-sm font-bold h-[6vh] bg-gradient-to-r from-[#818cf8] via-[#3b82f6] to-[#4f46e5] text-white hover:scale-90 transition duration-200' type='submit'>Login</button>

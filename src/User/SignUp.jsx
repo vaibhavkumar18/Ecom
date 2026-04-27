@@ -10,6 +10,7 @@ const SignUp = () => {
     const baseURL = import.meta.env.VITE_API_BASE_URL; // ✅ dynamic from .env
     const dispatch = useDispatch();
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState("");
     const navigate = useNavigate();
     const [userdata, setuserdata] = useState({ Name: "", Email: "", Password: "", Gender: "", Address: [], Phone_Number: "", addToCart: [], Orders: [], Username: "" })
     const handlechange = (e) => {
@@ -25,9 +26,22 @@ const SignUp = () => {
             return;
         }
 
+        // 🔴 Custom validation
+        if (userdata.Password.length < 6) {
+            setError("Password must be at least 6 characters");
+            return;
+        }
+
+        setError(""); // clear previous error
         setLoading(true);
-        if (userdata.Name.length > 0 && userdata.Email.length > 0 && userdata.Password.length > 0 && userdata.Phone_Number.length == 10) {
-            const username = userdata.Email.split('@')[0]
+        if (
+            userdata.Name.length > 0 &&
+            userdata.Email.length > 0 &&
+            userdata.Password.length > 0 &&
+            userdata.Phone_Number.length == 10
+        ) {
+            const username = userdata.Email.split('@')[0];
+
             const response = await fetch(`${baseURL}/signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -45,21 +59,20 @@ const SignUp = () => {
                 }),
                 credentials: "include"
             });
+
             const data = await response.json();
+
             if (data.success) {
                 setTimeout(() => {
                     dispatch(signup(data.user));
                     navigate("/");
                 }, 100);
-            }
-            else {
-                alert("This Email Already Exist!!!");
+            } else {
+                setError("This Email Already Exists");
                 setLoading(false);
             }
-        }
-        else {
-            setLoading(false);   // ✅ ADD
-            return;
+        } else {
+            setLoading(false);
         }
     }
     if (loading) {
@@ -146,7 +159,8 @@ const SignUp = () => {
                                 </div>
 
                                 {/* Password  */}
-                                <div className="relative flex flex-row items-center j w-full ">
+                                <div className='relative flex flex-col items-center w-full'>
+                                <div className="relative flex flex-row items-center w-full ">
                                     <input
                                         required
                                         type={showPassword ? "text" : "password"}
@@ -172,6 +186,14 @@ const SignUp = () => {
                                     )}
 
                                 </div>
+                                {error && (
+                                        <p className="text-red-500 text-sm mt-1  text-left w-[100%]">
+                                            {error}
+                                        </p>
+                                    )}
+
+                                </div>
+                                    
                             </div>
 
                             {/* Sign Up  */}
