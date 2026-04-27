@@ -73,14 +73,14 @@ const ProfileInfo = () => {
                 theme="dark"
                 transition={Bounce}
             />
-            <div className="profile-info lg:w-[60vw] md:w-[60vw] w-full max-h-[250vh] lg:mt-0 md:mt-0 mt-[10vw] ">
+            <div className="profile-info w-full h-full lg:mt-0 md:mt-0 mt-[10vw] ">
                 <div className="profile-info-container lg:pl-[35px] md:pl-[35px] pl-7 lg:pt-[20px] lg:p-[10px]">
 
                     {/* personal info :name  */}
-                    <div className="personal-info w-full">
+                    <div className="personal-info">
                         <div className="heading flex items-center gap-[20px]">
-                            <h2 className='text-xl text-center font-medium'>Personal Information</h2>
-                            <button className='text-[#2455f4] text-md text-center' onClick={() => {
+                            <h2 className='lg:text-xl md:text-base text-sm text-center font-medium'>Personal Information</h2>
+                            <button className='text-[#2455f4] lg:text-md text-sm text-center' onClick={() => {
                                 setprofile(prev => ({
                                     ...prev,
                                     Name: User.user.Name || "",
@@ -90,34 +90,34 @@ const ProfileInfo = () => {
 
                             }}>{showeditprofileinfo ? "Edit" : "Cancel"}</button>
                         </div>
-                        <div className="main-content mt-[20px] flex lg:flex-row md:flex-row flex-col">
+                        <div className="main-content mt-[20px] flex lg:flex-row md:flex-row flex-col ">
                             <div className="personal">
-                                <div className={`containe ${showeditprofileinfo ? "cursor-not-allowed" : ""}`}>
-                                    <input type="text" name="Name" id="First-name" value={profile.Name} className={` text-md border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px]  ${showeditprofileinfo ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showeditprofileinfo == true} onChange={(e) => { handlechange(e) }} />
+                                <div className={`containe ${showeditprofileinfo ? "cursor-not-allowed" : ""} `}>
+                                    <input type="text" name="Name" id="First-name" value={profile.Name} className={` lg:text-md text-sm border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px]  w-full  ${showeditprofileinfo ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showeditprofileinfo == true} onChange={(e) => { handlechange(e) }} />
                                 </div>
                                 {/* Gender  */}
                                 <div className="containe mt-[25px]">
-                                    <div className='mb-[10px] text-md'>Your Gender</div>
-                                    <div className={`gender-container flex items-center gap-[40px] ${showeditprofileinfo ? "cursor-not-allowed" : ""}`}>
+                                    <div className='mb-[10px] lg:text-xl md:text-base text-sm '>Your Gender</div>
+                                    <div className={`gender-container flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center items-start lg:gap-[40px]  md:gap-[40px] gap-[10px] w-full ${showeditprofileinfo ? "cursor-not-allowed" : ""}`}>
                                         <div className={`male flex gap-[10px] items-center ${showeditprofileinfo ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white"}`}>
-                                            <input type="checkbox" name="Male" id="Male" value={profile.Gender} className={`appearance-none h-4 w-4 border border-gray-400 rounded-full checked:bg-[#2874f0]  checked:border-[#2874f0] relative `}
+                                            <input type="checkbox" name="Male" id="Male" value={profile.Gender} className={` appearance-none h-4 w-4 border border-gray-400 rounded-full checked:bg-[#2874f0]  checked:border-[#2874f0] relative `}
                                                 checked={profile.Gender === 'Male'}
                                                 disabled={showeditprofileinfo == true} onChange={(e) => { setprofile({ ...profile, Gender: e.target.checked ? 'Male' : '' }) }} />
 
-                                            <label htmlFor="Male" className='rounded-[50px]'>Male</label>
+                                            <label htmlFor="Male" className='rounded-[50px] lg:text-md text-sm'>Male</label>
                                         </div>
                                         <div className={`female flex gap-[10px] items-center ${showeditprofileinfo ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white "} ${showeditprofileinfo ? "cursor-not-allowed" : ""}`}>
 
                                             <input type="checkbox" name="Female" id="Female" value={profile.Gender} className={`appearance-none h-4 w-4 border border-gray-400 rounded-full checked:bg-[#2874f0]  checked:border-[#2874f0] relative `}
                                                 checked={profile.Gender === 'Female'} disabled={showeditprofileinfo == true} onChange={(e) => { setprofile({ ...profile, Gender: e.target.checked ? 'Female' : '' }) }} />
 
-                                            <label htmlFor="Female">Female</label>
+                                            <label htmlFor="Female lg:text-md text-sm">Female</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             {showeditprofileinfo ? "" : (
-                                <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-5 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 text-lg border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
+                                <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-2 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 lg:text-lg md:text-md text-sm border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
                                     handleSave()
                                     setshoweditprofileinfo(!showeditprofileinfo)
                                 }} disabled={profile.Name.length == 0 && profile.Gender == ""}>SAVE</button>
@@ -127,8 +127,8 @@ const ProfileInfo = () => {
                         {/* Email Address  */}
                         <div className="email-container mt-[50px]">
                             <div className="heading flex items-center gap-[20px]">
-                                <h2 className='text-xl text-center font-medium'>Email Address</h2>
-                                <button className='text-[#2455f4] text-md text-center' onClick={() => {
+                                <h2 className='lg:text-xl md:text-base text-sm text-center font-medium'>Email Address</h2>
+                                <button className='text-[#2455f4] lg:text-md text-sm text-center' onClick={() => {
                                     setprofile(prev => ({
                                         ...prev,
                                         Email: User.user.Email || ""
@@ -138,9 +138,9 @@ const ProfileInfo = () => {
                             </div>
                             <div className={`email ${showemailedit ? "cursor-not-allowed" : ""}`}>
                                 <div className="containe mt-[20px]">
-                                    <input type="text" name="Email" id="Email" value={profile.Email} className={` text-md border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px]  ${showemailedit ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showemailedit == true} onChange={(e) => { handlechange(e) }} />
+                                    <input type="text" name="Email" id="Email" value={profile.Email} className={` lg:text-md text-sm border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px]  lg:w-[40%] md:w-[60%] w-full ${showemailedit ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa]  " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showemailedit == true} onChange={(e) => { handlechange(e) }} />
                                     {showemailedit ? "" : (
-                                        <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-5 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 text-lg border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
+                                        <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-2 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 lg:text-lg md:text-md text-sm border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
                                             handleSave()
                                             setshowemailedit(!showemailedit)
                                         }} disabled={profile.Email.length == 0}>SAVE</button>
@@ -152,8 +152,8 @@ const ProfileInfo = () => {
                         {/* Phone_number  */}
                         <div className="phone-number-container mt-[50px]">
                             <div className="heading flex items-center gap-[20px]">
-                                <h2 className='text-xl text-center font-medium'>Phone Number</h2>
-                                <button className='text-[#2455f4] text-md text-center' onClick={() => {
+                                <h2 className='lg:text-xl md:text-base text-sm text-center font-medium'>Phone Number</h2>
+                                <button className='text-[#2455f4] lg:text-md text-sm text-center' onClick={() => {
                                     setprofile(prev => ({
                                         ...prev,
                                         Phone_Number: User.user.Phone_Number || ""
@@ -161,11 +161,11 @@ const ProfileInfo = () => {
                                     setshowphonenumedit(!showphonenumedit)
                                 }}>{showphonenumedit ? "Edit" : "Cancel"}</button>
                             </div>
-                            <div className={`email ${showphonenumedit ? "cursor-not-allowed" : ""}`}>
+                            <div className={`phone-number ${showphonenumedit ? "cursor-not-allowed" : ""}`}>
                                 <div className="containe mt-[20px]">
-                                    <input type="tel" name="Phone_Number" id="Phone_Number" value={profile.Phone_Number || ""} className={` text-md border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px]  ${showphonenumedit ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa] , checked:bg-[#fafafa] , checked:border-[#fafafa] " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showphonenumedit == true} onChange={(e) => { handlechange(e) }} />
+                                    <input type="tel" name="Phone_Number" id="Phone_Number" value={profile.Phone_Number || ""} className={` lg:text-md text-sm border-[#e0e0e0] border-[2px] rounded-[5px]  p-[16px] lg:w-[40%] md:w-[60%] w-full  ${showphonenumedit ? "pointer-events-none ,hover:cursor-not-allowed , opacity-60 , bg-[#fafafa] , checked:bg-[#fafafa] , checked:border-[#fafafa] " : " bg-white , border-[#2455f4] border-[1px]"}`} disabled={showphonenumedit == true} onChange={(e) => { handlechange(e) }} />
                                     {showphonenumedit ? "" : (
-                                        <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-5 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 text-lg border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
+                                        <button className='lg:ml-[50px] md:ml-[50px] ml-0 mt-2 lg:w-[8vw] md:w-[8vw] w-1/2 lg:h-[6vh] md:h-[6vh] h-10 lg:text-lg md:text-md text-sm border-black border-2 bg-[#2874f0] text-white font-semibold' onClick={() => {
                                             handleSave()
                                             setshowphonenumedit(!showphonenumedit)
                                         }} disabled={profile.Phone_Number.length == 0}>SAVE</button>
@@ -175,9 +175,9 @@ const ProfileInfo = () => {
                         </div>
                     </div>
                     {/* texts  */}
-                    <div className="texts mt-[70px]">
-                        <h1 className='text-xl font-[500]'>FAQs</h1>
-                        <div className="question-container flex flex-col gap-[20px] mt-[30px]">
+                    <div className="texts mt-[70px] lg:text-xl md:text-lg text-md">
+                        <h1 className='lg:text-xl md:text-lg text-md font-[500]'>FAQs</h1>
+                        <div className="question-container flex flex-col gap-[20px] mt-[30px] lg:text-xl md:text-lg text-md">
                             <span className='font-medium'>What happens when I update my email address (or mobile number)?</span>
                             <p>Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).</p>
                             <span className='font-medium'>When will my Flipkart account be updated with the new email address (or mobile number)?</span>

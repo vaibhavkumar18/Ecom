@@ -104,14 +104,14 @@ const ManageAddress = () => {
             }, 300);
           }} />
         ) : (
-          <div className="containe flex justify-center flex-col items-center w-[60vw] h-[90vh] p-[30px]">
+          <div className="containe flex justify-center flex-col items-center w-[100%] h-[100%] p-[30px]">
             <div className="img">
-              <img src={`${baseURL}/static/address-img.png`} alt="address" className="w-full h-[25vh]" />
+              <img src={`${baseURL}/static/address-img.png`} alt="address" className="w-full h-full" />
             </div>
-            <h2 className="text-xl font-semibold">No Addresses found in your account!</h2>
-            <p className="m-[15px]">Add a delivery address.</p>
+            <h2 className="lg:text-xl text-base font-semibold text-center">No Addresses found in your account!</h2>
+            <p className="text-sm text-gray-500 text-center">Add a delivery address.</p>
             <button
-              className="w-[15vw] h-[8vh] rounded-md bg-[#2874f0] font-semibold text-base text-white"
+              className="w-fit h-fit p-2 rounded-md bg-[#2874f0] font-semibold text-base text-white"
               onClick={() => setisAddAddress(true)}
             >
               ADD ADDRESSES
