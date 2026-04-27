@@ -42,7 +42,7 @@ const Header = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [isMobile]);
 
-  
+
 
 
 
@@ -64,7 +64,7 @@ const Header = () => {
 
         return () => window.removeEventListener("resize", checkDeviceType);
     }, []);
-  
+
 
 
     return (
@@ -125,7 +125,11 @@ const Header = () => {
                                                     </div>
                                                 </ul>
                                                 <div className="lg:w-[10rem] w-[5rem] h-[1px] bg-gray-500"></div>
-                                                <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => handleLogout()}>
+                                                <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => {
+                                                    setHamOpen(false);
+                                                    setIsOpen(false);
+                                                    navigate("/Logout");
+                                                }}>
                                                     <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" >
                                                         <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw]   ' onClick={() => navigate("/Logout")}>Logout</li>
                                                     </div>
@@ -180,25 +184,37 @@ const Header = () => {
                                                     </div>
                                                 </ul>
 
-                                                <div className="lg:w-[10rem] w-[6rem] h-[1px] bg-gray-300"></div>
+                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-300"></div>
                                                 <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => navigate("/MyProfile")}>
                                                     <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => navigate("/MyProfile")}>
                                                         <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw] '>My Profile</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[6rem] h-[1px] bg-gray-500"></div>
+                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
                                                 <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => navigate("/Order")}>
                                                     <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => navigate("/Order")}>
                                                         <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw]  '>Orders</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[6rem] h-[1px] bg-gray-500"></div>
-                                                <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => handleLogout()}>
-                                                    <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => handleLogout()}>
-                                                        <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw]  ' onClick={() => handleLogout()}>Logout</li>
+                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
+                                                <ul className="py-1 hover:bg-[#fafafa] flex flex-row items-center cursor-pointer" onClick={() => {
+                                                    setHamOpen(false);
+                                                    setIsOpen(false);
+                                                    navigate("/Logout");
+                                                }}>
+                                                    <div className="signup-container flex justify-between items-center cursor-pointer mb-[5px] mt-[5px]" onClick={() => {
+                                                        setHamOpen(false);
+                                                        setIsOpen(false);
+                                                        navigate("/Logout");
+                                                    }}>
+                                                        <li className='cursor-pointer lg:text-sm text-[10px] pl-[1vw]  ' onClick={() => {
+                                                            setHamOpen(false);
+                                                            setIsOpen(false);
+                                                            navigate("/Logout");
+                                                        }}>Logout</li>
                                                     </div>
                                                 </ul>
-                                                <div className="lg:w-[10rem] w-[6rem] h-[1px] bg-gray-500"></div>
+                                                <div className="lg:w-[10rem] w-[4rem] h-[1px] bg-gray-500"></div>
 
                                             </div>
                                         </>)}
@@ -230,35 +246,49 @@ const Header = () => {
                                                 </div>
 
                                                 <div className="content xxs:text-base text-xl flex flex-col gap-5">
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
+
+                                                    <h1 onClick={() => {
+                                                        setHamOpen(false)
                                                         navigate("/")
                                                     }}>Home</h1>
 
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
-                                                        navigate("/Login")
-                                                    }}>Login</h1>
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
-                                                        navigate("/SignUp")
-                                                    }}>SignUp</h1>
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
-                                                        navigate("/MyProfile")
-                                                    }}>MyProfile</h1>
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
-                                                        navigate("/Order")
-                                                    }}>Orders</h1>
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
+                                                    {!isAuthenticated ? (
+                                                        <>
+                                                            <h1 onClick={() => {
+                                                                setHamOpen(false)
+                                                                navigate("/Login")
+                                                            }}>Login</h1>
+
+                                                            <h1 onClick={() => {
+                                                                setHamOpen(false)
+                                                                navigate("/SignUp")
+                                                            }}>SignUp</h1>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <h1 onClick={() => {
+                                                                setHamOpen(false)
+                                                                navigate("/MyProfile")
+                                                            }}>MyProfile</h1>
+
+                                                            <h1 onClick={() => {
+                                                                setHamOpen(false)
+                                                                navigate("/Order")
+                                                            }}>Orders</h1>
+
+                                                            <h1 onClick={() => {
+                                                                setHamOpen(false);
+                                                                setIsOpen(false);
+                                                                navigate("/Logout");
+                                                            }}>Logout</h1>
+                                                        </>
+                                                    )}
+
+                                                    <h1 onClick={() => {
+                                                        setHamOpen(false)
                                                         navigate("/CartPage")
                                                     }}>Cart</h1>
-                                                    <h1 className='cursor-pointer' onClick={() => {
-                                                        setHamOpen(!hamOpen)
-                                                        handleLogout()
-                                                    }}>Logout</h1>
+
                                                 </div>
 
                                             </div>

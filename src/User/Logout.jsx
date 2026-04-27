@@ -18,12 +18,11 @@ const Logout = () => {
                 });
             } catch (e) {
                 console.error(e);
-            }
-
-            setTimeout(() => {
+            } finally {
+                // 🔥 always run
                 dispatch(logout());
                 navigate("/Login");
-            }, 2000);
+            }
         };
 
         doLogout();
