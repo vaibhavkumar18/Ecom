@@ -37,8 +37,8 @@ const Checkout_Payment_Address = () => {
   };
   setTimeout(() => {
     setLoading(false)
-  }, 1000);
-  console.log(cart)
+  }, 100);
+  
   useEffect(() => {
     document.title = 'Checkout | Flipkart';
   }, []);
@@ -85,9 +85,6 @@ const Checkout_Payment_Address = () => {
         const taxAmount = baseAmount * 0.18;
         const deliveryCharge = 25;
         const cashHandlingCharge = 5;
-
-
-
         const orderData = {
           OrderId: uuidv4(),
           Phone_number: User.user.Phone_Number,
