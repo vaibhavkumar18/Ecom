@@ -37,7 +37,7 @@ const OrderDetail = () => {
     };
     setTimeout(() => {
         setloading(false)
-    }, 1000);
+    }, 100);
 
     const CancelOrder = async () => {
         setCancelloader(true)

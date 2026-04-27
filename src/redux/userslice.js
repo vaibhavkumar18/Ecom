@@ -17,9 +17,7 @@ const userslice = createSlice({
     },
 
     loginSuccess: (state, action) => {
-      console.log("Login Success Action Payload:", action.payload);
       state.user = action.payload;
-      console.log("Login Success state user:", state.user);
       state.isAuthenticated = true;
     },
 
