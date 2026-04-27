@@ -8,7 +8,7 @@ This project demonstrates **end-to-end full stack development**, including authe
 
 ## 🔗 Live Demo
 
-- 🌐 App Link: https://your-frontend-link.vercel.app  
+- 🌐 App Link: https://ecom-two-virid.vercel.app/  
 
 
 ---
