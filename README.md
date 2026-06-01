@@ -1,159 +1,194 @@
-# 🛒 Full Stack E-Commerce Application (MERN)
+# 🛒 E-Commerce Application - Full Stack MERN
 
-A production-grade **E-Commerce Web Application** built using the **MERN stack**, inspired by platforms like Flipkart and Amazon.
+![Status](https://img.shields.io/badge/status-active-success)
+![Stack](https://img.shields.io/badge/stack-MERN-green)
+![Auth](https://img.shields.io/badge/auth-JWT-blue)
+![License](https://img.shields.io/badge/license-MIT-orange)
 
-This project demonstrates **end-to-end full stack development**, including authentication, product management, cart system, and order flow.
-
----
-
-## 🔗 Live Demo
-
-- 🌐 Website Link: https://ecom-two-virid.vercel.app/  
-
+> A production-grade full-stack e-commerce web application built using the MERN stack, inspired by platforms like Flipkart and Amazon. Demonstrates end-to-end full stack development including authentication, product management, persistent cart system, and complete order flow.
 
 ---
 
-## 📂 Repositories
+## 🌐 Live Demo
 
-- 🖥️ Frontend Repo: https://github.com/vaibhavkumar18/Ecom.git  
-- 🌐 Backend Repo: https://github.com/vaibhavkumar18/Ecom-backend.git  
+🔗 [ecom-two-virid.vercel.app](https://ecom-two-virid.vercel.app/)
 
 ---
 
 ## 📌 Overview
 
-This application allows users to:
-- Add/remove items from cart
-- Manage user accounts
-- Add/edit/delete addresses
-- Place orders
-- Persist data using backend APIs
+A full-stack e-commerce platform where users can browse products, manage their cart, handle addresses, and place orders — all backed by a secure REST API with JWT authentication and MongoDB persistence.
 
-Built with focus on **scalable architecture and real-world backend practices**.
+**Key Highlights:**
+- JWT-based secure authentication with protected routes
+- Persistent shopping cart stored in MongoDB
+- Complete order placement and checkout flow
+- Address management with add, edit, and delete
+- Redux-based global state management on frontend
+- Modular backend architecture with MVC pattern
 
 ---
 
 ## ⚙️ Tech Stack
 
-### 🖥️ Frontend
-- React.js (Hooks)
-- Redux (State Management)
-- Tailwind CSS
-- React Router
-
-### 🌐 Backend
-- Node.js
-- Express.js
-
-### 🗄️ Database
-- MongoDB (NoSQL)
-- Mongoose (ODM)
-
-### 🔐 Authentication
-- JWT (JSON Web Tokens)
+| Layer | Technology |
+|---|---|
+| Frontend | React.js, Redux, React Router, Tailwind CSS |
+| Backend | Node.js, Express.js, RESTful APIs |
+| Database | MongoDB, Mongoose |
+| Authentication | JWT, bcrypt |
+| Tools | Git, GitHub, Postman, dotenv |
 
 ---
 
 ## 🧠 Features
 
-### 👤 Authentication
-- User Signup & Login
-- JWT-based secure authentication
-- Protected routes
-
-### 🛍️ Product System
-- Dynamic product listing
-- Product detail pages
-- Backend-driven data fetching
-
-### 🛒 Cart System
-- Add/remove items
-- Update quantity
-- Persistent cart (stored in DB)
-
-### 📦 Order Flow
-- Checkout process
-- Order placement logic
-
-### 📍 Address Management
-- Add / Edit / Delete address
-- Redux-based state handling
+- ✅ User registration and login with JWT authentication
+- ✅ Protected routes on both frontend and backend
+- ✅ Dynamic product listing with detail pages
+- ✅ Add, remove, and update quantity in cart
+- ✅ Persistent cart stored in MongoDB across sessions
+- ✅ Complete checkout and order placement flow
+- ✅ Address management — add, edit, delete
+- ✅ Redux for global state management
+- ✅ Backend-driven data fetching for all product and user data
+- ✅ Modular MVC backend architecture
 
 ---
 
 ## 🏗️ Architecture
-Frontend (React + Redux)
-↓ API Calls
-Backend (Node.js + Express)
-↓
-MongoDB Database
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/4d522a1e-b6e7-4e69-ba44-3126954df103" />
 
 
 ---
 
-## 📁 Project Structure
+## 🔗 Repositories
 
-### Frontend
-src/
-├── components/
-├── pages/
-├── redux/
-└── App.jsx
+| Repo | Link |
+|---|---|
+| 🖥️ Frontend | [github.com/vaibhavkumar18/Ecom](https://github.com/vaibhavkumar18/Ecom) |
+| ⚙️ Backend | [github.com/vaibhavkumar18/Ecom-backend](https://github.com/vaibhavkumar18/Ecom-backend) |
 
 ---
 
+## 🚀 Getting Started
 
-## 🚀 Getting Started (Local Setup)
-### 1. Create a Folder Named "Frontend"
-####  Clone Repositories
-##### Frontend
+### Frontend Setup
+
+#### 1. Clone Frontend Repository
 ```bash
-cd Frontend
 git clone https://github.com/vaibhavkumar18/Ecom.git
+cd Ecom
 ```
-### Create a Folder Named "Backend"
-##### Backend
+
+#### 2. Install Dependencies
 ```bash
-cd Backend
+npm install
+```
+
+#### 3. Setup Environment Variables
+Create a `.env` file in the root:
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+#### 4. Run Frontend
+```bash
+npm run dev
+```
+
+---
+
+### Backend Setup
+
+#### 1. Clone Backend Repository
+```bash
 git clone https://github.com/vaibhavkumar18/Ecom-backend.git
+cd Ecom-backend
 ```
 
-### 2. Install Dependencies
-#### Frontend
+#### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-#### Backend
-```bash
-npm install
-```
-
-### 3. Environment Variables (Backend)
-#### Create .env file:
-```bash
+#### 3. Setup Environment Variables
+Create a `.env` file in the root:
+```env
 PORT=3000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
 ```
 
-### 4. Run Application
-#### Frontend
+#### 4. Run Backend
 ```bash
 npm run dev
 ```
-
-#### Backend
-```bash
-npm run dev
-```
-
-## 📬 Contact
-
-- 👤 Name: Vaibhav   
-- 💼 LinkedIn: https://www.linkedin.com/in/vaibhavcodes/  
-- 💻 GitHub: https://github.com/vaibhavkumar18  
 
 ---
 
-⭐ Found this project helpful or interesting? A star would mean a lot.
+## 📡 API Reference
+
+### Auth Routes
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|---|
+| POST | /api/auth/register | Register new user | ❌ |
+| POST | /api/auth/login | Login user | ❌ |
+| GET | /api/auth/get-me | Get current user | ✅ |
+
+### Product Routes
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|---|
+| GET | /api/products | Get all products | ❌ |
+| GET | /api/products/:id | Get single product | ❌ |
+
+### Cart Routes
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|---|
+| GET | /api/cart | Get user cart | ✅ |
+| POST | /api/cart/add | Add item to cart | ✅ |
+| PUT | /api/cart/update | Update item quantity | ✅ |
+| DELETE | /api/cart/remove/:id | Remove item from cart | ✅ |
+
+### Order Routes
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|---|
+| POST | /api/orders/place | Place order | ✅ |
+| GET | /api/orders | Get user orders | ✅ |
+
+### Address Routes
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|---|
+| GET | /api/address | Get all addresses | ✅ |
+| POST | /api/address/add | Add new address | ✅ |
+| PUT | /api/address/update/:id | Update address | ✅ |
+| DELETE | /api/address/delete/:id | Delete address | ✅ |
+
+---
+
+## 🔐 How Authentication Works
+
+1. User registers or logs in
+2. Backend signs a **JWT token** and returns it
+3. Frontend stores token and sends it in every protected request
+4. Auth middleware verifies token on all protected routes
+5. Invalid or missing token returns 401 Unauthorized
+
+---
+
+## 📸 Screenshots
+
+> Add screenshots here
+
+---
+
+## 👨‍💻 Author
+
+**Vaibhav Kumar Nigam**
+- 🔗 LinkedIn: [linkedin.com/in/vaibhavcodes](https://www.linkedin.com/in/vaibhavcodes)
+- 🐙 GitHub: [github.com/vaibhavkumar18](https://github.com/vaibhavkumar18)
+- 📧 Email: vaibhavkumarnigam30@gmail.com
+
+---
+
+⭐ Found this project helpful? A star would mean a lot!
