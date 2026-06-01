@@ -56,12 +56,6 @@ A full-stack e-commerce platform where users can browse products, manage their c
 
 ---
 
-## 🏗️ Architecture
-<img width="40%" alt="image" src="https://github.com/user-attachments/assets/4d522a1e-b6e7-4e69-ba44-3126954df103" />
-
-
----
-
 ## 🔗 Repositories
 
 | Repo | Link |
